@@ -32,7 +32,7 @@ def load_cows(filename):
     return res
             
 s = load_cows('ps1_cow_data.txt')
-print(s)
+
 
 # Problem 2
 def greedy_cow_transport(cows,limit=10):
@@ -74,7 +74,7 @@ def greedy_cow_transport(cows,limit=10):
     return res
                 
 t = greedy_cow_transport(s)
-print(t)
+
 
 # Problem 3
 def brute_force_cow_transport(cows,limit=10):
@@ -99,8 +99,34 @@ def brute_force_cow_transport(cows,limit=10):
     trips
     """
     # TODO: Your code here
-    
-        
+    res = []
+    lst = []
+    for key, value in cows.items():
+        lst.append((key, value))
+    for partition in get_partitions(lst):
+        sub = partition
+        for i in sub:
+            flag = False
+            tmp = []
+            total = 0
+            for key, value in i:
+                if(total + value > 10):
+                    flag = True
+                    break
+                else:
+                    total += value
+                    tmp.append(key)
+            if(not flag):
+                res.append(tmp)
+        if(len(res) > 0):
+            return res
+g = brute_force_cow_transport(s)
+print(g)
+                    
+                    
+                    
+                
+brute_force_cow_transport(s)
 # Problem 4
 def compare_cow_transport_algorithms():
     """
