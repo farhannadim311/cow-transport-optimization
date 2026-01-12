@@ -31,7 +31,6 @@ def load_cows(filename):
             res[name] = int(weight)
     return res
             
-s = load_cows('ps1_cow_data.txt')
 
 
 # Problem 2
@@ -73,7 +72,7 @@ def greedy_cow_transport(cows,limit=10):
             del sorted_dic[n]
     return res
                 
-t = greedy_cow_transport(s)
+
 
 
 # Problem 3
@@ -100,6 +99,7 @@ def brute_force_cow_transport(cows,limit=10):
     """
     # TODO: Your code here
     lst = []
+    res = []
     for key, value in cows.items():
         lst.append((key, value))
     for partition in get_partitions(lst):
@@ -116,13 +116,19 @@ def brute_force_cow_transport(cows,limit=10):
         if not flag:
             ret = sub
             break
+    for l in ret:
+        tmp = []
+        for key,value in l:
+            tmp.append(key)
+        res.append(tmp)
+    return res
+            
             
         
                     
             
         
-c = brute_force_cow_transport(s)
-print(c)
+
                     
                     
 
@@ -141,6 +147,24 @@ def compare_cow_transport_algorithms():
     Does not return anything.
     """
     # TODO: Your code here
-    pass
+    cows = load_cows("ps1_cow_data_2.txt")
+    start = time.time()
+    g = greedy_cow_transport(cows)
+    end = time.time()
+    time_taken = end - start
+    print(f"The time taken for the greedy method is {time_taken}")
+    print(f"Greedy Method: {g}")
+    print(f"Greedy Method number of trips: {len(g)}")
+    start2 = time.time()
+    b = brute_force_cow_transport(cows)
+    end2 = time.time()
+    time_taken = end2 - start2
+    print(f"The time taken for the brute force approach is {time_taken}")
+    print(f"Brute Force Method: {b}")
+    print(f"Brute force method length: {len(b)}")
+    
+compare_cow_transport_algorithms()
+
+    
 
 
