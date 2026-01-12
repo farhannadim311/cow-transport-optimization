@@ -99,34 +99,33 @@ def brute_force_cow_transport(cows,limit=10):
     trips
     """
     # TODO: Your code here
-    res = []
     lst = []
     for key, value in cows.items():
         lst.append((key, value))
     for partition in get_partitions(lst):
         sub = partition
+        flag = False
         for i in sub:
-            flag = False
-            tmp = []
             total = 0
             for key, value in i:
-                if(total + value > 10):
+                if(total + value > limit):
                     flag = True
                     break
                 else:
                     total += value
-                    tmp.append(key)
-            if(not flag):
-                res.append(tmp)
-        if(len(res) > 0):
-            return res
-g = brute_force_cow_transport(s)
-print(g)
+        if not flag:
+            ret = sub
+            break
+            
+        
+                    
+            
+        
+c = brute_force_cow_transport(s)
+print(c)
                     
                     
-                    
-                
-brute_force_cow_transport(s)
+
 # Problem 4
 def compare_cow_transport_algorithms():
     """
