@@ -1,6 +1,4 @@
-# Optimization & Dynamic Programming (MIT 6.0002)
 
-This repository contains my Python solutions for **MIT 6.0002 (Introduction to Computational Thinking and Data Science)**, Problem Set 1. The project focuses on solving combinatorial optimization problems using Greedy algorithms, Brute Force search, and Dynamic Programming with memoization.
 
 ## 📂 Project Structure
 
