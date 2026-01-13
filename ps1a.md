@@ -10,7 +10,7 @@ The Greedy Algorithm runs significantly faster because it doesn't go through the
 
 ## Does the greedy algorithm return the optimal solution? Why/why not?
 
-The problem with the greedy method is that it does not always return the optimal solution, it finds the local minimum and maximum, however the local minimum or maximum might not always lead to the global minimum or maximum. Let's use an example to illustrate that, for example imagine if we have a backpack of capacity 15 and we have items of weight [2,5,12,10]. Following the Greedy method, we would take 12 and then 2 (we cannot take 10 after 12, becasue the bag would overflow, for the same reason we cannot take 5 as well). Therefore, our max capacity we would fill is 14. However, if we take the value 10 and 5, we could easily reach 15, but the Greedy method just does not give us that. This is a counter example
+The problem with the greedy method is that it does not always return the optimal solution, it finds the local minimum and maximum, however the local minimum or maximum might not always lead to the global minimum or maximum. Let's use an example to illustrate that, for example imagine if we have a backpack of capacity 15 and we have items of weight [2,5,12,10]. Following the Greedy method, we would take 12 and then 2 (we cannot take 10 after 12, becasue the bag would overflow, for the same reason we cannot take 5 as well). Therefore, our max capacity we would fill is 14. However, if we take the value 10 and 5, we could easily reach 15, but the Greedy method just does not give us that. This is a counter example.
 
 ---
 
