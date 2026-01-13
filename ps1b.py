@@ -23,7 +23,17 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
     Returns: int, smallest number of eggs needed to make target weight
     """
     # TODO: Your code here
-    pass
+    res = 0
+    def helper():
+        if(target_weight == 0):
+            return memo[0]
+        else:
+            if(target_weight in memo):
+                return memo[target_weight]
+            else:
+                first_elem = egg_weights[0]
+                rest_elem = egg_weights[1:]
+            
 
 # EXAMPLE TESTING CODE, feel free to add more if you'd like
 if __name__ == '__main__':
