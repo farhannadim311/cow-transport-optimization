@@ -23,18 +23,15 @@ def dp_make_weight(egg_weights, target_weight, memo = {}):
     Returns: int, smallest number of eggs needed to make target weight
     """
     # TODO: Your code here
-    if(target_weight == 0):
-        return memo[0]
-    else:
-        if(target_weight in memo):
-            return memo[target_weight]
-        else:
-            first_elem = egg_weights[0]
-            rest_elem = egg_weights[1:]
-            remaining_target = target_weight - first_elem
-            memo[remaining_target] = memo.get(remaining_target, 0) + 1
-            dp_make_weight(rest_elem, remaining_target, memo)
-            dp_make_weight(rest_elem, target_weight, memo)
+    dp = [target_weight +  1] * (target_weight + 1)
+    dp[0] = 0
+    for a in range(len(dp)):
+        for egg in egg_weights:
+            if(a -egg  >= 0):
+                dp[a] = min(dp[a], 1 + dp[a - egg])
+    return dp[target_weight] if(dp[target_weight] != target_weight + 1) else - 1
+                
+                
                 
                 
             
